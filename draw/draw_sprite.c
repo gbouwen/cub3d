@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/03 13:25:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/16 11:14:11 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 17:40:21 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void		draw_sprite(t_data *data)
 		y = data->sprite_calc.draw_start.y;
 		if (data->sprite_calc.transform.y > 0 && stripe > 0 &&
 						stripe < data->file.res.x &&
-						data->sprite_calc.transform.y < data->zbuffer[stripe])
+						data->sprite_calc.transform.y <= data->zbuffer[stripe])
 		{
 			while (y < data->sprite_calc.draw_end.y)
 			{

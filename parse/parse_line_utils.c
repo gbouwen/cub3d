@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/06 15:30:28 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/17 15:00:37 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 17:53:27 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	check_elements(t_data *data, char **elements, int correct_amount)
 {
 	if (!elements)
 	{
-		free_textures(data);
+		free_texture_paths(data);
 		exit_error(MALLOC_FAIL);
 	}
 	if (count_elements(elements) != correct_amount)
 	{
-		free_textures(data);
+		free_texture_paths(data);
 		exit_error(INVALID_ELEMENT_FORMAT);
 	}
 }

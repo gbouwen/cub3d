@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/06 11:59:28 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/17 13:50:34 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 17:52:29 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	check_elem_amt(int amount_of_elements[8], char *line, t_data *data)
 		if (amount_of_elements[i] != 1)
 		{
 			free(line);
-			free_textures(data);
+			free_texture_paths(data);
 			exit_error(INVALID_TOTAL_ELEMENT_AMOUNT);
 		}
 		i++;
@@ -54,7 +54,7 @@ void	fill_data(int fd, t_data *data)
 		if (id == ERROR)
 		{
 			free(line);
-			free_textures(data);
+			free_texture_paths(data);
 			exit_error(INVALID_LINE);
 		}
 		if (id == MAP)

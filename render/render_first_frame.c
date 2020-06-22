@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/12 14:37:48 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 13:23:25 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 17:51:17 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,20 @@ static void	init_zbuffer(t_data *data)
 {
 	data->zbuffer = ft_calloc(data->file.res.x, 8);
 	if (data->zbuffer == NULL)
+	{
+		free_texture_paths(data);
 		exit_error(MALLOC_FAIL);
+	}
 }
 
 static void	init_sprites_array(t_data *data)
 {
 	data->sprites = ft_calloc(data->amount_of_sprites, 16);
 	if (data->sprites == NULL)
+	{
+		free_texture_paths(data);
 		exit_error(MALLOC_FAIL);
+	}
 }
 
 void		render_first_frame(t_data *data)

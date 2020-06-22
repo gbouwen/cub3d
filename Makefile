@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/02/07 16:19:39 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/06/22 15:41:21 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/06/22 18:06:05 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SOURCE_C = 	main.c \
 			render/set_camera_plane.c \
 			render/cast_ray.c \
 			render/render_screen.c \
-			draw/draw.c \
+			draw/draw_line.c \
 			draw/get_color.c \
 			draw/draw_map.c \
 			draw/draw_texture_pixel.c \

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/11 16:33:04 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 15:31:27 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 18:17:31 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	setup_mlx(t_data *data)
 
 void	close_screen_mlx(t_data *data)
 {
+	free_data(data);
 	mlx_destroy_image(data->mlx.mlx, data->mlx.img.img);
 	mlx_destroy_window(data->mlx.mlx, data->mlx.win);
 	exit(0);

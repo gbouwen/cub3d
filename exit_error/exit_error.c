@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 17:31:32 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 11:38:39 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 17:52:03 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	exit_data_error(t_data *data, int error_code)
 		ft_putstr_fd("Invalid map. Check the rules for the map.\n", 2);
 	if (error_code == INVALID_PLAYER_AMOUNT)
 		ft_putstr_fd("Invalid player amount. Player can only occur once.\n", 2);
-	free_textures(data);
+	free_texture_paths(data);
 	exit(0);
 }
 

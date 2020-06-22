@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 14:27:22 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/17 16:03:52 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 17:54:19 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void 	check_amount_of_players(t_data *data)
 	while (data->file.map[y] != NULL)
 	{
 		x = 0;
-		while(data->file.map[y][x] != '\0')
+		while (data->file.map[y][x] != '\0')
 		{
 			c = data->file.map[y][x];
 			if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
@@ -81,7 +81,7 @@ char		**copy_map(int map_rows, t_data *data)
 	flood_fill_map = malloc(sizeof (char *) * (map_rows));
 	if (!flood_fill_map)
 	{
-		free_textures(data);
+		free_texture_paths(data);
 		exit_error(MALLOC_FAIL);
 	}
 	i = 0;

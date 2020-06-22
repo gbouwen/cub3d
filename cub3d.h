@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 15:16:22 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 11:55:07 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 18:17:04 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ char		**copy_map(int map_rows, t_data *data);
 ** FREE ------------------------------------------------------------------------
 */
 
-void		free_textures(t_data *data);
+void		free_texture_paths(t_data *data);
+void		free_data(t_data *data);
 
 /*
 ** MLX_UTILS -------------------------------------------------------------------
