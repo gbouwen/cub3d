@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 16:06:16 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/05 14:08:13 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 14:38:37 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,14 +138,6 @@ typedef struct	s_sprite_calc
 	t_xy_int	tex;
 }				t_sprite_calc;
 
-typedef struct	s_bmp_file
-{
-	int	fd;
-	int	img_size;
-	int	file_size;
-	int	pixels_per_meter;
-}				t_bmp_file;
-
 typedef struct	s_data
 {
 	t_file			file;
@@ -163,7 +155,7 @@ typedef struct	s_data
 	double			*zbuffer;
 	t_sprite_map	*sprites;
 	t_sprite_calc	sprite_calc;
-	t_bmp_file		bmp_file;
+	int				bmp_file_fd;
 }				t_data;
 
 #endif

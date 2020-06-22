@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/12 14:37:48 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 11:38:41 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 13:23:25 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ static void	init_sprites_array(t_data *data)
 
 void		render_first_frame(t_data *data)
 {
-//	get_correct_resolution(data); fix op MACOS -> staat in mlx_utils.c
 	get_textures_from_files(data);
 	get_sprite_from_file(data);
 	init_raycast_variables(data);

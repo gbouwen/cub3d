@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/11 16:33:04 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 11:55:06 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/22 15:31:27 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	setup_mlx(t_data *data)
 	data->mlx.img.img = mlx_new_image(data->mlx.mlx, data->file.res.x,
 															data->file.res.y);
 	data->mlx.img.addr =
-	mlx_get_data_addr(data->mlx.img.img, &data->mlx.img.bits_per_pixel,
-						&data->mlx.img.line_len, &data->mlx.img.endian);
+			mlx_get_data_addr(data->mlx.img.img, &data->mlx.img.bits_per_pixel,
+								&data->mlx.img.line_len, &data->mlx.img.endian);
 }
 
 void	close_screen_mlx(t_data *data)
