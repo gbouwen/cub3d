@@ -5,7 +5,7 @@ WE ./pics/redbrick.xpm
 EA ./pics/wood.xpm
 
 S ./pics/barrel.xpm
-F 100,50,10
+F 0,0,0
 C 50,168,133
 
 1111111111111111111

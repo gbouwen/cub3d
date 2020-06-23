@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/05 11:13:28 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 15:39:11 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 13:20:21 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,8 @@ static void	write_pixels_to_file(t_data *data)
 void		screenshot(t_data *data)
 {
 	create_file(data);
-	printf("1\n");
 	set_bmp_file_header(data);
-	printf("2\n");
 	set_bmp_image_header(data);
-	printf("3\n");
 	write_pixels_to_file(data);
-	printf("4\n");
 	close_screen_mlx(data);
 }
