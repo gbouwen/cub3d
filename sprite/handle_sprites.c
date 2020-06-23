@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/03 14:39:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 10:50:54 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 13:06:13 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	translate_sprite_position(t_data *data, int i)
 {
 	data->sprite_calc.sprite.x =
-								data->sprites[i].pos.x - data->ray.player_pos.x;
+								data->sprites[i].pos.x - data->ray.player_pos.x + 0.5;
 	data->sprite_calc.sprite.y =
-								data->sprites[i].pos.y - data->ray.player_pos.y;
+								data->sprites[i].pos.y - data->ray.player_pos.y + 0.5;
 }
 
 static void	transform_sprite_with_inverse_camera_matrix(t_data *data)

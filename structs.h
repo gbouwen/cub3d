@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 16:06:16 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 14:38:37 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 12:54:05 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,8 +122,8 @@ typedef struct	s_sprite_img
 
 typedef struct	s_sprite_map
 {
-	t_xy_int	pos;
-	int			dist_to_player;
+	t_xy_dbl	pos;
+	double		dist_to_player;
 }				t_sprite_map;
 
 typedef struct	s_sprite_calc

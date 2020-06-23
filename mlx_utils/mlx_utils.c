@@ -6,11 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/11 16:33:04 by gbouwen       #+#    #+#                 */
-<<<<<<< HEAD
-/*   Updated: 2020/06/22 18:17:31 by gbouwen       ########   odam.nl         */
-=======
-/*   Updated: 2020/06/22 15:31:27 by gbouwen       ########   odam.nl         */
->>>>>>> facd23ab01e1b8bd729d337b1948fb9a78a28a50
+/*   Updated: 2020/06/23 11:43:32 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
