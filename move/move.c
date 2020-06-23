@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/14 13:29:22 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 13:07:42 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 14:59:26 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ void	move_forward(t_data *data)
 	movespeed = 0.04;
 	new_y = data->ray.player_pos.y + data->ray.dir_vec.y * movespeed;
 	new_x = data->ray.player_pos.x + data->ray.dir_vec.x * movespeed;
-	if (data->file.map[new_y][(int)data->ray.player_pos.x] != '1')
-		data->ray.player_pos.y += data->ray.dir_vec.y * movespeed;
-	if (data->file.map[(int)data->ray.player_pos.y][new_x] != '1')
-		data->ray.player_pos.x += data->ray.dir_vec.x * movespeed;
+	if (data->file.map[new_y][(int)data->ray.player_pos.x] != '1' &&
+		data->file.map[new_y][(int)data->ray.player_pos.x] != '2')
+			data->ray.player_pos.y += data->ray.dir_vec.y * movespeed;
+	if (data->file.map[(int)data->ray.player_pos.y][new_x] != '1' &&
+		data->file.map[(int)data->ray.player_pos.y][new_x] != '2')
+			data->ray.player_pos.x += data->ray.dir_vec.x * movespeed;
 }
 
 void	move_backward(t_data *data)
@@ -36,10 +38,12 @@ void	move_backward(t_data *data)
 	movespeed = 0.04;
 	new_y = data->ray.player_pos.y - data->ray.dir_vec.y * movespeed;
 	new_x = data->ray.player_pos.x - data->ray.dir_vec.x * movespeed;
-	if (data->file.map[new_y][(int)data->ray.player_pos.x] != '1')
-		data->ray.player_pos.y -= data->ray.dir_vec.y * movespeed;
-	if (data->file.map[(int)data->ray.player_pos.y][new_x] != '1')
-		data->ray.player_pos.x -= data->ray.dir_vec.x * movespeed;
+	if (data->file.map[new_y][(int)data->ray.player_pos.x] != '1' &&
+		data->file.map[new_y][(int)data->ray.player_pos.x] != '2')
+			data->ray.player_pos.y -= data->ray.dir_vec.y * movespeed;
+	if (data->file.map[(int)data->ray.player_pos.y][new_x] != '1' &&
+		data->file.map[(int)data->ray.player_pos.y][new_x] != '2')
+			data->ray.player_pos.x -= data->ray.dir_vec.x * movespeed;
 }
 
 void	move_left(t_data *data)
@@ -51,10 +55,12 @@ void	move_left(t_data *data)
 	movespeed = 0.04;
 	new_y = data->ray.player_pos.y - data->ray.camera_plane.y * movespeed;
 	new_x = data->ray.player_pos.x - data->ray.camera_plane.x * movespeed;
-	if (data->file.map[new_y][(int)data->ray.player_pos.x] != '1')
-		data->ray.player_pos.y -= data->ray.camera_plane.y * movespeed;
-	if (data->file.map[(int)data->ray.player_pos.y][new_x] != '1')
-		data->ray.player_pos.x -= data->ray.camera_plane.x * movespeed;
+	if (data->file.map[new_y][(int)data->ray.player_pos.x] != '1' &&
+		data->file.map[new_y][(int)data->ray.player_pos.x] != '2')
+			data->ray.player_pos.y -= data->ray.camera_plane.y * movespeed;
+	if (data->file.map[(int)data->ray.player_pos.y][new_x] != '1' &&
+		data->file.map[(int)data->ray.player_pos.y][new_x] != '2')
+			data->ray.player_pos.x -= data->ray.camera_plane.x * movespeed;
 }
 
 void	move_right(t_data *data)
@@ -66,8 +72,10 @@ void	move_right(t_data *data)
 	movespeed = 0.04;
 	new_y = data->ray.player_pos.y + data->ray.camera_plane.y * movespeed;
 	new_x = data->ray.player_pos.x + data->ray.camera_plane.x * movespeed;
-	if (data->file.map[new_y][(int)data->ray.player_pos.x] != '1')
-		data->ray.player_pos.y += data->ray.camera_plane.y * movespeed;
-	if (data->file.map[(int)data->ray.player_pos.y][new_x] != '1')
-		data->ray.player_pos.x += data->ray.camera_plane.x * movespeed;
+	if (data->file.map[new_y][(int)data->ray.player_pos.x] != '1' &&
+		data->file.map[new_y][(int)data->ray.player_pos.x] != '2')
+			data->ray.player_pos.y += data->ray.camera_plane.y * movespeed;
+	if (data->file.map[(int)data->ray.player_pos.y][new_x] != '1' &&
+		data->file.map[(int)data->ray.player_pos.y][new_x] != '2')
+			data->ray.player_pos.x += data->ray.camera_plane.x * movespeed;
 }

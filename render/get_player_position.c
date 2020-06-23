@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/12 15:22:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 12:45:50 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 15:06:17 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	get_player_position(t_data *data)
 			c = data->file.map[y][x];
 			if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
 			{
-				data->ray.player_pos.x = x;
-				data->ray.player_pos.y = y;
+				data->ray.player_pos.x = x + 0.5;
+				data->ray.player_pos.y = y + 0.5;
 				return ;
 			}
 			x++;

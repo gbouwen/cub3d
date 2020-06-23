@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/13 14:10:12 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/05/27 15:40:14 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 14:53:35 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static void	set_raycast_variables(t_data *data, int x)
 {
 	data->ray.camera_x = (2 * x / data->file.res.x) - 1;
 	data->ray.ray_dir.x =
-	data->ray.dir_vec.x + data->ray.camera_plane.x * data->ray.camera_x;
+		data->ray.dir_vec.x + data->ray.camera_plane.x * data->ray.camera_x;
 	data->ray.ray_dir.y =
-	data->ray.dir_vec.y + data->ray.camera_plane.y * data->ray.camera_x;
+		data->ray.dir_vec.y + data->ray.camera_plane.y * data->ray.camera_x;
 	data->ray.box_map.x = (int)data->ray.player_pos.x;
 	data->ray.box_map.y = (int)data->ray.player_pos.y;
 	data->ray.delta_dist.x = fabs(1 / data->ray.ray_dir.x);

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/10 16:28:49 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 13:05:49 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 15:26:00 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,27 @@ static void		check_first_last_row(t_data *data, char **map, int last)
 	}
 }
 
+static void		check_middle_rows(t_data *data, char **map, int last)
+{
+	int	y;
+	int	x;
+
+	y = 1;
+	while (y < last)
+	{
+		x = 0;
+		while (map[y][x] != '\0')
+		{
+			if (map[y][x] != '0' && map[y][x] != '1' && map[y][x] != '2' &&
+				map[y][x] != 'N' && map[y][x] != 'S' && map[y][x] != 'W' &&
+				map[y][x] != 'E')
+					exit_data_error(data, INVALID_MAP);
+			x++;
+		}
+		y++;
+	}
+}
+
 void			check_valid_map(t_data *data)
 {
 	t_xy_int	player_pos;
@@ -64,5 +85,6 @@ void			check_valid_map(t_data *data)
 	map_rows = get_amount_of_rows(data);
 	flood_fill_map = copy_map(map_rows, data);
 	check_first_last_row(data, flood_fill_map, map_rows - 1);
+	check_middle_rows(data, flood_fill_map, map_rows - 2);
 	flood_fill(data, player_pos.x, player_pos.y, flood_fill_map);
 }
