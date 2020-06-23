@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/02/07 16:19:39 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/06/23 17:59:26 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/06/23 18:03:26 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,12 +69,12 @@ $(NAME): $(SOURCE_O)
 	@make -C mlx
 	@cp mlx/libmlx.dylib .
 	@echo "$(GREEN)Successfully made the mlx library!$(NORMAL)"
-	gcc -fsanitize=address -fno-omit-frame-pointer -Wall -Wextra -Werror -Lmlx -lmlx -Llft -lft -Lgnl -lgnl \
+	gcc -Wall -Wextra -Werror -Lmlx -lmlx -Llft -lft -Lgnl -lgnl \
 	-framework OpenGL -framework Appkit -o $(NAME) $(SOURCE_O)
 
 %.o: %.c
 	@echo "$(GREEN)Compiling:$(NORMAL)"
-	gcc -fsanitize=address -fno-omit-frame-pointer -Wall -Wextra -Werror -Imlx -c $< -o $@
+	gcc -Wall -Wextra -Werror -Imlx -c $< -o $@
 
 clean:
 	@/bin/rm -f $(SOURCE_O)

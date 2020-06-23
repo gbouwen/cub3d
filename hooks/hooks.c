@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/12 12:23:31 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 17:58:39 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 18:08:23 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int	close_window(t_data *data)
 
 int	handle_movement(t_data *data)
 {
-	data->move_counter = 0;
 	if (data->move.forward == 1)
 		move_forward(data);
 	if (data->move.backward == 1)
@@ -74,7 +73,6 @@ int	handle_movement(t_data *data)
 		data->turn.left == 1 || data->turn.right == 1)
 	{
 		data->move_counter++;
-		printf("ha\n");
 		render_screen(data);
 	}
 	return (0);

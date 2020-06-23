@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/14 13:31:44 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 13:07:08 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 18:03:00 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	turn_left(t_data *data)
 	double	old_dir_vec_x;
 	double	old_camera_plane_x;
 
-	rotspeed = 0.02;
+	rotspeed = 0.03;
 	old_dir_vec_x = data->ray.dir_vec.x;
 	old_camera_plane_x = data->ray.camera_plane.x;
 	data->ray.dir_vec.x = data->ray.dir_vec.x * cos(-rotspeed) -
@@ -37,7 +37,7 @@ void	turn_right(t_data *data)
 	double	old_dir_vec_x;
 	double	old_camera_plane_x;
 
-	rotspeed = 0.02;
+	rotspeed = 0.03;
 	old_dir_vec_x = data->ray.dir_vec.x;
 	old_camera_plane_x = data->ray.camera_plane.x;
 	data->ray.dir_vec.x = data->ray.dir_vec.x * cos(rotspeed) -
