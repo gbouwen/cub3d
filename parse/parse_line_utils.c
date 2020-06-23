@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/06 15:30:28 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 17:53:27 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 15:55:38 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void	free_all(char **elements)
 	i = count_elements(elements);
 	while (i >= 0)
 	{
-		free(elements[i]);
+		if (elements[i])
+			free(elements[i]);
 		i--;
 	}
-	free(elements);
+	if (elements)
+		free(elements);
 }

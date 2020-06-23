@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/10 16:28:49 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 15:26:00 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 16:07:13 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,21 @@ static void		check_middle_rows(t_data *data, char **map, int last)
 	}
 }
 
+static void		free_flood_fill_map(char **flood_fill_map, int map_rows)
+{
+	int	i;
+
+	i = 0;
+	while (i < map_rows)
+	{
+		if (flood_fill_map[i])
+			free(flood_fill_map[i]);
+		i++;
+	}
+	if (flood_fill_map)
+		free(flood_fill_map);
+}
+
 void			check_valid_map(t_data *data)
 {
 	t_xy_int	player_pos;
@@ -87,4 +102,5 @@ void			check_valid_map(t_data *data)
 	check_first_last_row(data, flood_fill_map, map_rows - 1);
 	check_middle_rows(data, flood_fill_map, map_rows - 2);
 	flood_fill(data, player_pos.x, player_pos.y, flood_fill_map);
+	free_flood_fill_map(flood_fill_map, map_rows);
 }

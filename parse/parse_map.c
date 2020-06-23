@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/07 12:30:42 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 17:54:21 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 16:26:17 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,20 @@ static void	free_and_exit(char *line, t_data *data)
 
 static char	*ft_copy_add_newline(char *line, t_data *data)
 {
+	int		i;
 	int		len;
 	char	*new_line;
 
+	i = 0;
 	len = ft_strlen(line);
 	new_line = malloc(len + 2);
 	if (!new_line)
 		free_and_exit(line, data);
-	new_line = ft_strdup(line);
+	while (i < len)
+	{
+		new_line[i] = line[i];
+		i++;
+	}
 	new_line[len] = '\n';
 	new_line[len + 1] = '\0';
 	free(line);

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/12 14:37:48 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 11:43:42 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 16:57:18 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	init_zbuffer(t_data *data)
 
 static void	init_sprites_array(t_data *data)
 {
-	data->sprites = ft_calloc(data->amount_of_sprites, 16);
+	data->sprites = ft_calloc(data->amount_of_sprites, sizeof(t_sprite_map));
 	if (data->sprites == NULL)
 	{
 		free_texture_paths(data);
