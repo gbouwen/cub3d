@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/07 12:20:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 11:55:06 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 17:20:53 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	check_resolution(t_data *data)
 {
-	get_correct_resolution(data);
+	if (data->file.save_to_bmp == 0)
+		get_correct_resolution(data);
 	if (data->file.res.x <= 0 || data->file.res.y <= 0)
 		return (0);
 	return (1);

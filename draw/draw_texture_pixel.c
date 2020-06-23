@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/26 15:18:14 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/05/27 15:02:28 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 17:57:40 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	draw_north_texture_pixel(t_data *data, int x, int y)
 	data->north.color = *(unsigned int *)(data->north.img.addr + pixel);
 	if (data->ray.side == 1)
 		data->north.color = (data->north.color >> 1) & 8355711;
-	my_mlx_pixel_put(&data->mlx.img, x, y, data->north.color);
+	if (data->move_counter % 2 != 0)
+		my_mlx_pixel_put(&data->mlx.first_img, x, y, data->north.color);
+	if (data->move_counter % 2 == 0)
+		my_mlx_pixel_put(&data->mlx.second_img, x, y, data->north.color);
 }
 
 void	draw_south_texture_pixel(t_data *data, int x, int y)
@@ -37,7 +40,10 @@ void	draw_south_texture_pixel(t_data *data, int x, int y)
 	data->south.color = *(unsigned int *)(data->south.img.addr + pixel);
 	if (data->ray.side == 1)
 		data->south.color = (data->south.color >> 1) & 8355711;
-	my_mlx_pixel_put(&data->mlx.img, x, y, data->south.color);
+	if (data->move_counter % 2 != 0)
+		my_mlx_pixel_put(&data->mlx.first_img, x, y, data->south.color);
+	if (data->move_counter % 2 == 0)
+		my_mlx_pixel_put(&data->mlx.second_img, x, y, data->south.color);
 }
 
 void	draw_west_texture_pixel(t_data *data, int x, int y)
@@ -51,7 +57,10 @@ void	draw_west_texture_pixel(t_data *data, int x, int y)
 	data->west.color = *(unsigned int *)(data->west.img.addr + pixel);
 	if (data->ray.side == 1)
 		data->west.color = (data->west.color >> 1) & 8355711;
-	my_mlx_pixel_put(&data->mlx.img, x, y, data->west.color);
+	if (data->move_counter % 2 != 0)
+		my_mlx_pixel_put(&data->mlx.first_img, x, y, data->west.color);
+	if (data->move_counter % 2 == 0)
+		my_mlx_pixel_put(&data->mlx.second_img, x, y, data->west.color);
 }
 
 void	draw_east_texture_pixel(t_data *data, int x, int y)
@@ -65,5 +74,8 @@ void	draw_east_texture_pixel(t_data *data, int x, int y)
 	data->east.color = *(unsigned int *)(data->east.img.addr + pixel);
 	if (data->ray.side == 1)
 		data->east.color = (data->east.color >> 1) & 8355711;
-	my_mlx_pixel_put(&data->mlx.img, x, y, data->east.color);
+	if (data->move_counter % 2 != 0)
+		my_mlx_pixel_put(&data->mlx.first_img, x, y, data->east.color);
+	if (data->move_counter % 2 == 0)
+		my_mlx_pixel_put(&data->mlx.second_img, x, y, data->east.color);
 }

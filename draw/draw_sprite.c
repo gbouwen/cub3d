@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/03 13:25:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 16:31:36 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 17:33:42 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,16 @@ static void	draw_sprite_pixel(t_data *data, int x, int y)
 	pixel = ((data->sprite_calc.tex.y * data->sprite.img.line_len) +
 			data->sprite_calc.tex.x * (data->sprite.img.bits_per_pixel / 8));
 	color = *(unsigned int *)(data->sprite.img.addr + pixel);
-	if ((color & 0x00FFFFFF) != 0)
-		my_mlx_pixel_put(&data->mlx.img, x, y, color);
+	if (data->move_counter % 2 != 0)
+	{
+		if ((color & 0x00FFFFFF) != 0)
+			my_mlx_pixel_put(&data->mlx.first_img, x, y, color);
+	}
+	if (data->move_counter % 2 == 0)
+	{
+		if ((color & 0x00FFFFFF) != 0)
+			my_mlx_pixel_put(&data->mlx.second_img, x, y, color);
+	}
 }
 
 void		draw_sprite(t_data *data)

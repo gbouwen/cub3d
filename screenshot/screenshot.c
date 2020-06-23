@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/05 11:13:28 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 13:22:52 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 18:00:16 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,9 @@ static void	write_pixels_to_file(t_data *data)
 		x = 0;
 		while (x < data->file.res.x)
 		{
-			pix_addr = data->mlx.img.addr + (y * data->mlx.img.line_len + x *
-											(data->mlx.img.bits_per_pixel / 8));
+			pix_addr = data->mlx.first_img.addr +
+									(y * data->mlx.first_img.line_len + x *
+									(data->mlx.first_img.bits_per_pixel / 8));
 			pixel = *(unsigned int *)pix_addr;
 			write_val = write(data->bmp_file_fd, &pixel, 3);
 			if (write_val == -1)

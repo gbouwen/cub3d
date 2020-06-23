@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 16:06:16 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 12:54:05 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 17:35:05 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ typedef struct	s_mlx
 {
 	void		*mlx;
 	void		*win;
-	t_mlx_img	img;
+	t_mlx_img	first_img;
+	t_mlx_img	second_img;
 }				t_mlx;
 
 typedef struct	s_raycast
@@ -156,6 +157,7 @@ typedef struct	s_data
 	t_sprite_map	*sprites;
 	t_sprite_calc	sprite_calc;
 	int				bmp_file_fd;
+	int				move_counter;
 }				t_data;
 
 #endif

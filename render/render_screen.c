@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/13 13:18:45 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 16:29:37 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 18:01:34 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,15 @@ void	render_screen(t_data *data)
 		data->zbuffer[x] = data->ray.perp_wall_dist;
 		x++;
 	}
-	handle_sprites(data);
+	if (data->amount_of_sprites > 0)
+		handle_sprites(data);
 	if (data->file.save_to_bmp != 1)
-		mlx_put_image_to_window(data->mlx.mlx, data->mlx.win, data->mlx.img.img,
-																		0, 0);
+	{
+		if (data->move_counter % 2 != 0)
+			mlx_put_image_to_window(data->mlx.mlx, data->mlx.win,
+									data->mlx.first_img.img, 0, 0);
+		if (data->move_counter % 2 == 0)
+			mlx_put_image_to_window(data->mlx.mlx, data->mlx.win,
+									data->mlx.second_img.img, 0, 0);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/12 14:37:48 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 16:57:18 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 17:56:44 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	init_move_turn_variables(t_data *data)
 
 static void	init_zbuffer(t_data *data)
 {
-	data->zbuffer = ft_calloc(data->file.res.x, 8);
+	data->zbuffer = ft_calloc(data->file.res.x, sizeof(double));
 	if (data->zbuffer == NULL)
 	{
 		free_texture_paths(data);
@@ -74,11 +74,14 @@ void		render_first_frame(t_data *data)
 	init_move_turn_variables(data);
 	init_zbuffer(data);
 	count_sprites(data);
-	init_sprites_array(data);
+	if (data->amount_of_sprites > 0)
+		init_sprites_array(data);
 	get_player_position(data);
 	get_direction_vector(data);
 	set_camera_plane(data);
 	get_sprite_positions(data);
+	if (data->file.save_to_bmp == 0)
+		create_second_image(data);
 	render_screen(data);
 	if (data->file.save_to_bmp == 1)
 		screenshot(data);

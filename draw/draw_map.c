@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/18 16:36:15 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/05/27 15:41:31 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 17:29:37 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void	draw_ceiling(t_data *data, int x)
 	ceiling_color = get_color(data->file.ceiling_color);
 	while (y < data->draw.start)
 	{
-		my_mlx_pixel_put(&data->mlx.img, x, y, ceiling_color);
+		if (data->move_counter % 2 != 0)
+			my_mlx_pixel_put(&data->mlx.first_img, x, y, ceiling_color);
+		if (data->move_counter % 2 == 0)
+			my_mlx_pixel_put(&data->mlx.second_img, x, y, ceiling_color);
 		y++;
 	}
 }
@@ -54,7 +57,10 @@ void	draw_floor(t_data *data, int x)
 	floor_color = get_color(data->file.floor_color);
 	while (y < data->file.res.y)
 	{
-		my_mlx_pixel_put(&data->mlx.img, x, y, floor_color);
+		if (data->move_counter % 2 != 0)
+			my_mlx_pixel_put(&data->mlx.first_img, x, y, floor_color);
+		if (data->move_counter % 2 == 0)
+			my_mlx_pixel_put(&data->mlx.second_img, x, y, floor_color);
 		y++;
 	}
 }

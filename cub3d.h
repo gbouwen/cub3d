@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 15:16:22 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 18:17:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/23 17:12:51 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ t_xy_int	get_player_pos(t_data *data);
 int			get_amount_of_rows(t_data *data);
 char		**copy_map(int map_rows, t_data *data);
 
-
 /*
 ** FREE ------------------------------------------------------------------------
 */
@@ -77,7 +76,6 @@ void		setup_mlx(t_data *data);
 void		close_screen_mlx(t_data *data);
 void		get_correct_resolution(t_data *data);
 
-
 /*
 ** RENDER ----------------------------------------------------------------------
 */
@@ -88,6 +86,7 @@ void		get_direction_vector(t_data *data);
 void		set_camera_plane(t_data *data);
 void		render_screen(t_data *data);
 void		cast_ray(t_data *data, int x);
+void		create_second_image(t_data *data);
 
 /*
 ** DRAW ------------------------------------------------------------------------
