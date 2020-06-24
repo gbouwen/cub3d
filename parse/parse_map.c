@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/07 12:30:42 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/24 12:15:31 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 13:23:37 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void		parse_map(int fd, char *line, t_data *data)
 	str_map = ft_copy_add_newline(line, data);
 	while (get_next_line(fd, &line))
 		str_map = ft_join_free_add_newline(str_map, line, data, 0);
-	str_map = ft_join_free_add_newline(str_map, line, data);
+	str_map = ft_join_free_add_newline(str_map, line, data, 0);
 	check_double_newline(data, str_map);
 	data->file.map = ft_split(str_map, '\n');
 	if (!data->file.map)
