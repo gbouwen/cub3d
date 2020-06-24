@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/06 11:59:28 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 15:58:05 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 12:05:45 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	check_elem_amt(int amount_of_elements[8], char *line, t_data *data)
 	}
 }
 
-void	fill_data(int fd, t_data *data)
+void		fill_data(int fd, t_data *data)
 {
 	int		amount_of_elements[8];
 	char	*line;

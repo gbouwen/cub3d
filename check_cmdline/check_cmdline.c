@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 16:51:36 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/17 12:14:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 12:00:05 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	check_if_save(char *arg, t_data *data)
 		exit_error_cmdline(INVALID_ARGUMENT);
 }
 
-void	check_cmdline(int ac, char **av, t_data *data)
+void		check_cmdline(int ac, char **av, t_data *data)
 {
 	check_argument_amount(ac);
 	check_file_extension(av[1]);

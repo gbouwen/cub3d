@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/06 15:30:28 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 15:55:38 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 12:06:06 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	count_elements(char **elements)
 	return (i);
 }
 
-void	check_elements(t_data *data, char **elements, int correct_amount)
+void		check_elements(t_data *data, char **elements, int correct_amount)
 {
 	if (!elements)
 	{
@@ -36,7 +36,7 @@ void	check_elements(t_data *data, char **elements, int correct_amount)
 	}
 }
 
-void	free_all(char **elements)
+void		free_all(char **elements)
 {
 	int	i;
 

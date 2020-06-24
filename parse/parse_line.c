@@ -6,13 +6,13 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/06 15:01:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 17:53:29 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 12:16:31 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-static int	get_resolution(char *line, t_data *data, int id)
+static int		get_resolution(char *line, t_data *data, int id)
 {
 	char	**elements;
 
@@ -24,7 +24,7 @@ static int	get_resolution(char *line, t_data *data, int id)
 	return (id);
 }
 
-static int	get_path_to_texture(char *line, t_data *data, int id)
+static int		get_path_to_texture(char *line, t_data *data, int id)
 {
 	char	**elements;
 
@@ -58,7 +58,7 @@ static t_color	get_rgb_color(t_data *data, char *color_elements)
 	return (rgb_values);
 }
 
-static int	get_floor_ceiling(char *line, t_data *data, int id)
+static int		get_floor_ceiling(char *line, t_data *data, int id)
 {
 	char	**elements;
 
@@ -72,7 +72,7 @@ static int	get_floor_ceiling(char *line, t_data *data, int id)
 	return (id);
 }
 
-int	parse_line(char *line, t_data *data)
+int				parse_line(char *line, t_data *data)
 {
 	int	id;
 

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/07 12:30:42 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/24 10:54:17 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 12:15:31 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static char	*ft_copy_add_newline(char *line, t_data *data)
 	return (new_line);
 }
 
-static char	*ft_join_free_add_newline(char *str_map, char *line, t_data *data)
+static char	*ft_join_free_add_newline(char *str_map, char *line, t_data *data,
+																		int i)
 {
 	char	*new_str_map;
-	int		i;
 	int		x;
 
 	new_str_map = malloc(ft_strlen(str_map) + ft_strlen(line) + 2);
@@ -53,7 +53,6 @@ static char	*ft_join_free_add_newline(char *str_map, char *line, t_data *data)
 		free(str_map);
 		free_and_exit(line, data);
 	}
-	i = 0;
 	x = 0;
 	while (str_map[i] != '\0')
 	{
@@ -96,7 +95,7 @@ void		parse_map(int fd, char *line, t_data *data)
 
 	str_map = ft_copy_add_newline(line, data);
 	while (get_next_line(fd, &line))
-		str_map = ft_join_free_add_newline(str_map, line, data);
+		str_map = ft_join_free_add_newline(str_map, line, data, 0);
 	str_map = ft_join_free_add_newline(str_map, line, data);
 	check_double_newline(data, str_map);
 	data->file.map = ft_split(str_map, '\n');

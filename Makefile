@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/02/07 16:19:39 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/06/23 18:03:26 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/06/24 12:26:14 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,14 +39,14 @@ SOURCE_C = 	main.c \
 			hooks/hooks.c \
 			move/move.c \
 			move/turn.c \
-			texture/get_textures_from_files.c \
-			texture/set_texture_variables.c \
-			sprite/get_sprite_from_file.c \
-			sprite/count_sprites.c \
-			sprite/get_sprite_positions.c \
-			sprite/handle_sprites.c \
-			sprite/calc_dist_from_sprites_to_player.c \
-			sprite/sort_sprites.c \
+			textures/get_textures_from_files.c \
+			textures/set_texture_variables.c \
+			sprites/get_sprite_from_file.c \
+			sprites/count_sprites.c \
+			sprites/get_sprite_positions.c \
+			sprites/handle_sprites.c \
+			sprites/calc_dist_from_sprites_to_player.c \
+			sprites/sort_sprites.c \
 			screenshot/screenshot.c \
 
 SOURCE_O = $(SOURCE_C:.c=.o)

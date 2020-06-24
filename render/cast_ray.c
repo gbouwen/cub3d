@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/13 14:10:12 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 17:56:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 12:19:08 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,26 @@ static void	calculate_step_and_initial_side_dist(t_data *data)
 	if (data->ray.ray_dir.x < 0)
 	{
 		data->ray.step.x = -1;
-		data->ray.side_dist.x =
-		(data->ray.player_pos.x - data->ray.box_map.x) * data->ray.delta_dist.x;
+		data->ray.side_dist.x = (data->ray.player_pos.x - data->ray.box_map.x)
+													* data->ray.delta_dist.x;
 	}
 	else
 	{
 		data->ray.step.x = 1;
-		data->ray.side_dist.x =
-		(data->ray.box_map.x + 1.0 - data->ray.player_pos.x) *
-		data->ray.delta_dist.x;
+		data->ray.side_dist.x = (data->ray.box_map.x + 1.0 -
+							data->ray.player_pos.x) * data->ray.delta_dist.x;
 	}
 	if (data->ray.ray_dir.y < 0)
 	{
 		data->ray.step.y = -1;
-		data->ray.side_dist.y =
-		(data->ray.player_pos.y - data->ray.box_map.y) * data->ray.delta_dist.y;
+		data->ray.side_dist.y = (data->ray.player_pos.y - data->ray.box_map.y)
+													* data->ray.delta_dist.y;
 	}
 	else
 	{
 		data->ray.step.y = 1;
-		data->ray.side_dist.y =
-		(data->ray.box_map.y + 1.0 - data->ray.player_pos.y) *
-		data->ray.delta_dist.y;
+		data->ray.side_dist.y = (data->ray.box_map.y + 1.0 -
+							data->ray.player_pos.y) * data->ray.delta_dist.y;
 	}
 }
 
@@ -77,7 +75,7 @@ static void	perform_dda(t_data *data)
 	}
 }
 
-static void correct_perp_wall_dist(t_data *data)
+static void	correct_perp_wall_dist(t_data *data)
 {
 	if (data->ray.side == 0)
 	{
@@ -93,7 +91,7 @@ static void correct_perp_wall_dist(t_data *data)
 	}
 }
 
-void	cast_ray(t_data *data, int x)
+void		cast_ray(t_data *data, int x)
 {
 	set_raycast_variables(data, x);
 	calculate_step_and_initial_side_dist(data);

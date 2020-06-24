@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   parse_file.c                                       :+:    :+:            */
+/*   get_sprite_positions.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/05/04 16:35:13 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/24 12:05:28 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/06/03 13:32:54 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/06/23 16:52:43 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-static void	init_texture_paths(t_data *data)
+void		get_sprite_positions(t_data *data)
 {
-	data->file.north_ptt = NULL;
-	data->file.south_ptt = NULL;
-	data->file.east_ptt = NULL;
-	data->file.west_ptt = NULL;
-	data->file.sprite_ptt = NULL;
-}
+	int	y;
+	int	i;
+	int	x;
 
-void		parse_file(char **av, t_data *data)
-{
-	int	fd;
-
-	fd = open(av[1], O_RDONLY);
-	if (fd == -1)
-		exit_error(INVALID_FD);
-	init_texture_paths(data);
-	fill_data(fd, data);
-	check_data_values(data);
-	check_valid_map(data);
+	y = 0;
+	i = 0;
+	while (data->file.map[y] != NULL)
+	{
+		x = 0;
+		while (data->file.map[y][x] != '\0')
+		{
+			if (data->file.map[y][x] == '2')
+			{
+				data->sprites[i].pos.y = y;
+				data->sprites[i].pos.x = x;
+				i++;
+			}
+			x++;
+		}
+		y++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 15:16:22 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 17:12:51 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 12:28:53 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@
 # include "mlx/mlx.h"
 # include "structs.h"
 # include "definitions.h"
-
-/* */
-# include <stdio.h>
 
 /*
 ** CHECK_CMDLINE ---------------------------------------------------------------
@@ -55,7 +52,7 @@ void		parse_map(int fd, char *line, t_data *data);
 void		check_data_values(t_data *data);
 
 void		check_valid_map(t_data *data);
-void 		check_amount_of_players(t_data *data);
+void		check_amount_of_players(t_data *data);
 t_xy_int	get_player_pos(t_data *data);
 int			get_amount_of_rows(t_data *data);
 char		**copy_map(int map_rows, t_data *data);
@@ -134,7 +131,7 @@ void		get_textures_from_files(t_data *data);
 void		set_texture_variables(t_data *data);
 
 /*
-** SPRITE ----------------------------------------------------------------------
+** SPRITES ---------------------------------------------------------------------
 */
 
 void		get_sprite_from_file(t_data *data);

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/10 16:28:49 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/24 10:54:54 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 11:08:47 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ static void		check_middle_rows(t_data *data, char **map, int last)
 		x = 0;
 		while (map[y][x] != '\0')
 		{
-			if (map[y][x] != '0' && map[y][x] != '1' && map[y][x] != '2' &&
-				map[y][x] != 'N' && map[y][x] != 'S' && map[y][x] != 'W' &&
-				map[y][x] != 'E')
-					exit_data_error(data, INVALID_MAP);
+			if (map[y][x] != '0' && map[y][x] != ' ' && map[y][x] != '1' &&
+					map[y][x] != '2' && map[y][x] != 'N' && map[y][x] != 'S' &&
+					map[y][x] != 'W' && map[y][x] != 'E')
+				exit_data_error(data, INVALID_MAP);
 			x++;
 		}
 		y++;

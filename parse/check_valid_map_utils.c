@@ -6,13 +6,13 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 14:27:22 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 16:07:15 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 12:09:17 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void 	check_amount_of_players(t_data *data)
+void		check_amount_of_players(t_data *data)
 {
 	int		y;
 	int		x;
@@ -63,7 +63,7 @@ t_xy_int	get_player_pos(t_data *data)
 	return (player_pos);
 }
 
-int		get_amount_of_rows(t_data *data)
+int			get_amount_of_rows(t_data *data)
 {
 	int	y;
 
@@ -78,7 +78,7 @@ char		**copy_map(int map_rows, t_data *data)
 	char	**flood_fill_map;
 	int		i;
 
-	flood_fill_map = malloc(sizeof (char *) * (map_rows));
+	flood_fill_map = malloc(sizeof(char *) * (map_rows));
 	if (!flood_fill_map)
 	{
 		free_texture_paths(data);
