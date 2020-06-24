@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/12 14:37:48 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 18:08:59 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 10:23:27 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	init_move_turn_variables(t_data *data)
 	data->move.right = 0;
 	data->turn.left = 0;
 	data->turn.right = 0;
-	data->move_counter = 0;
+	data->move_counter = 1;
 }
 
 static void	init_zbuffer(t_data *data)
