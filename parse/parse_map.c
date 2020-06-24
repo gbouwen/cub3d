@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/07 12:30:42 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 16:26:17 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 10:54:17 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	free_and_exit(char *line, t_data *data)
 {
 	free(line);
-	free(data);
+	free_texture_paths(data);
 	exit_error(MALLOC_FAIL);
 }
 
@@ -72,6 +72,24 @@ static char	*ft_join_free_add_newline(char *str_map, char *line, t_data *data)
 	return (new_str_map);
 }
 
+static void	check_double_newline(t_data *data, char *str_map)
+{
+	int	i;
+	int	str_len;
+
+	i = 0;
+	str_len = ft_strlen(str_map);
+	while (str_map[i] != '\0')
+	{
+		if (str_map[i] == '\n' && str_map[i - 1] == '\n' && i != (str_len - 1))
+		{
+			free(str_map);
+			exit_data_error(data, INVALID_MAP);
+		}
+		i++;
+	}
+}
+
 void		parse_map(int fd, char *line, t_data *data)
 {
 	char	*str_map;
@@ -80,6 +98,7 @@ void		parse_map(int fd, char *line, t_data *data)
 	while (get_next_line(fd, &line))
 		str_map = ft_join_free_add_newline(str_map, line, data);
 	str_map = ft_join_free_add_newline(str_map, line, data);
+	check_double_newline(data, str_map);
 	data->file.map = ft_split(str_map, '\n');
 	if (!data->file.map)
 	{
