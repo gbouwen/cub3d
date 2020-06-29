@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/02/07 16:19:39 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/06/24 12:26:14 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/06/29 11:43:16 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SOURCE_C = 	main.c \
 			parse/check_data_values.c \
 			parse/check_valid_map.c \
 			parse/check_valid_map_utils.c \
+			parse/get_path_to_texture_utils.c \
 			free/free_functions.c \
 			mlx_utils/mlx_utils.c \
 			render/render_first_frame.c \

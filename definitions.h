@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 17:20:44 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/22 11:14:44 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/29 12:34:07 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@
 # define INVALID_FD_OPEN 20
 # define INVALID_WRITE 21
 # define INVALID_PLAYER_AMOUNT 22
+# define INVALID_SCREENSHOT_SIZE 23
+# define INVALID_CHARACTER 24
 
 /*
 ** ID ELEMENTS FOR PARSING

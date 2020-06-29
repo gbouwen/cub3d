@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 15:16:22 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/24 12:28:53 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/29 13:00:57 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		check_cmdline(int ac, char **av, t_data *data);
 void		exit_error_cmdline(int error_code);
 void		exit_error(int error_code);
 void		exit_data_error(t_data *data, int error_code);
-void		exit_image_error(int error_code);
+void		exit_image_error(t_data *data, int error_code);
 
 /*
 ** PARSE -----------------------------------------------------------------------
@@ -46,10 +46,17 @@ void		exit_image_error(int error_code);
 void		parse_file(char **av, t_data *data);
 void		fill_data(int fd, t_data *data);
 int			parse_line(char *line, t_data *data);
-void		check_elements(t_data *data, char **elements, int correct_amount);
-void		free_all(char **elements);
 void		parse_map(int fd, char *line, t_data *data);
 void		check_data_values(t_data *data);
+
+int			ft_atoi_resolution(const char *str);
+int			count_elements(char **elements);
+void		check_numbers(char **elements, t_data *data, int start);
+void		check_elements(t_data *data, char **elements, int correct_amount);
+void		free_all(char **elements);
+
+void		strdup_filename_in_data(t_data *data, char *filename, int id);
+void		filename_with_spaces_in_data(t_data *data, char *line, int id);
 
 void		check_valid_map(t_data *data);
 void		check_amount_of_players(t_data *data);

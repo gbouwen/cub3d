@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/07 12:20:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/23 17:20:53 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/24 16:23:40 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 static int	check_resolution(t_data *data)
 {
+	if ((data->file.res.x > 16384 || data->file.res.y > 16384) &&
+												data->file.save_to_bmp == 1)
+		exit_data_error(data, INVALID_SCREENSHOT_SIZE);
 	if (data->file.save_to_bmp == 0)
 		get_correct_resolution(data);
 	if (data->file.res.x <= 0 || data->file.res.y <= 0)

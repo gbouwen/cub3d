@@ -1,10 +1,10 @@
-R 900 600
-NO pics/eagle.xpm
-SO pics/bluestone.xpm
-WE pics/redbrick.xpm
-EA pics/colorstone.xpm
+R 1000 1000
 
-S  pics/barrel.xpm
+NO pics/eagle.xpm
+WE pics/redbrick.xpm
+SO pics/bluestone.xpm
+EA pics/colorstone.xpm
+S  pics/b  a rr    el.xpm
 
 F 184,113,39
 C 51,198,227

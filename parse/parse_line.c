@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/06 15:01:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/24 12:16:31 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/29 12:11:12 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,22 @@ static int		get_resolution(char *line, t_data *data, int id)
 
 	elements = ft_split(line, ' ');
 	check_elements(data, elements, 3);
-	data->file.res.x = ft_atoi(elements[1]);
-	data->file.res.y = ft_atoi(elements[2]);
+	check_numbers(elements, data, 1);
+	data->file.res.x = ft_atoi_resolution(elements[1]);
+	data->file.res.y = ft_atoi_resolution(elements[2]);
 	free_all(elements);
 	return (id);
 }
 
-static int		get_path_to_texture(char *line, t_data *data, int id)
+static int		get_path_to_texture_or_sprite(char *line, t_data *data, int id)
 {
 	char	**elements;
 
 	elements = ft_split(line, ' ');
-	check_elements(data, elements, 2);
-	if (id == NORTH)
-		data->file.north_ptt = ft_strdup(elements[1]);
-	if (id == SOUTH)
-		data->file.south_ptt = ft_strdup(elements[1]);
-	if (id == WEST)
-		data->file.west_ptt = ft_strdup(elements[1]);
-	if (id == EAST)
-		data->file.east_ptt = ft_strdup(elements[1]);
-	if (id == SPRITE)
-		data->file.sprite_ptt = ft_strdup(elements[1]);
+	if (count_elements(elements) == 2)
+		strdup_filename_in_data(data, elements[1], id);
+	if (count_elements(elements) > 2)
+		filename_with_spaces_in_data(data, line, id);
 	free_all(elements);
 	return (id);
 }
@@ -51,6 +45,7 @@ static t_color	get_rgb_color(t_data *data, char *color_elements)
 
 	elements = ft_split(color_elements, ',');
 	check_elements(data, elements, 3);
+	check_numbers(elements, data, 0);
 	rgb_values.red = ft_atoi(elements[0]);
 	rgb_values.green = ft_atoi(elements[1]);
 	rgb_values.blue = ft_atoi(elements[2]);
@@ -80,15 +75,15 @@ int				parse_line(char *line, t_data *data)
 	if (ft_strncmp("R ", line, 2) == 0)
 		id = get_resolution(line, data, RESOLUTION);
 	if (ft_strncmp("NO ", line, 3) == 0)
-		id = get_path_to_texture(line, data, NORTH);
+		id = get_path_to_texture_or_sprite(line, data, NORTH);
 	if (ft_strncmp("SO ", line, 3) == 0)
-		id = get_path_to_texture(line, data, SOUTH);
+		id = get_path_to_texture_or_sprite(line, data, SOUTH);
 	if (ft_strncmp("WE ", line, 3) == 0)
-		id = get_path_to_texture(line, data, WEST);
+		id = get_path_to_texture_or_sprite(line, data, WEST);
 	if (ft_strncmp("EA ", line, 3) == 0)
-		id = get_path_to_texture(line, data, EAST);
+		id = get_path_to_texture_or_sprite(line, data, EAST);
 	if (ft_strncmp("S ", line, 2) == 0)
-		id = get_path_to_texture(line, data, SPRITE);
+		id = get_path_to_texture_or_sprite(line, data, SPRITE);
 	if (ft_strncmp("F ", line, 2) == 0)
 		id = get_floor_ceiling(line, data, FLOOR);
 	if (ft_strncmp("C ", line, 2) == 0)

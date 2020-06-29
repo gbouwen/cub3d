@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/04 17:31:32 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/24 10:49:43 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/29 13:00:43 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	exit_error(int error_code)
 		ft_putstr_fd("Invalid file descriptor. Could not create bitmap.\n", 2);
 	if (error_code == INVALID_WRITE)
 		ft_putstr_fd("Invalid write. Could not write to bitmap.\n", 2);
+	if (error_code == INVALID_CHARACTER)
+		ft_putstr_fd("Invalid character at resolution, floor or ceiling.\n", 2);
 	exit(0);
 }
 
@@ -73,16 +75,19 @@ void	exit_data_error(t_data *data, int error_code)
 		ft_putstr_fd("Invalid map. Check the rules for the map.\n", 2);
 	if (error_code == INVALID_PLAYER_AMOUNT)
 		ft_putstr_fd("Invalid player amount. Player can only occur once.\n", 2);
+	if (error_code == INVALID_SCREENSHOT_SIZE)
+		ft_putstr_fd("Invalid resolution. Maximum dimension is 16384.\n", 2);
 	free_texture_paths(data);
 	exit(0);
 }
 
-void	exit_image_error(int error_code)
+void	exit_image_error(t_data *data, int error_code)
 {
 	ft_putstr_fd("Error:\n", 2);
 	if (error_code == INVALID_IMAGE)
 		ft_putstr_fd("Invalid image. Could not open the texture file.\n", 2);
 	if (error_code == INVALID_IMAGE_ADDRESS)
 		ft_putstr_fd("Invalid address. Could not get the image address.\n", 2);
+	free_texture_paths(data);
 	exit(0);
 }

@@ -6,13 +6,40 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/05/06 15:30:28 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/24 12:06:06 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/06/29 12:15:39 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-static int	count_elements(char **elements)
+int			ft_atoi_resolution(const char *str)
+{
+	int	i;
+	int	sign;
+	int	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
+		sign = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		if ((result * sign) > 16834)
+			return (result * sign);
+		i++;
+	}
+	if ((result * sign) > 0)
+		return (result * sign);
+	return (-1);
+}
+
+int			count_elements(char **elements)
 {
 	int	i;
 
@@ -20,6 +47,30 @@ static int	count_elements(char **elements)
 	while (elements[i] != NULL)
 		i++;
 	return (i);
+}
+
+void		check_numbers(char **elements, t_data *data, int start)
+{
+	int	i;
+	int	x;
+
+	i = start;
+	x = 0;
+	while (elements[i] != NULL)
+	{
+		x = 0;
+		while (elements[i][x] != '\0')
+		{
+			if (elements[i][x] >= '0' && elements[i][x] <= '9')
+				x++;
+			else
+			{
+				free_texture_paths(data);
+				exit_error(INVALID_CHARACTER);
+			}
+		}
+		i++;
+	}
 }
 
 void		check_elements(t_data *data, char **elements, int correct_amount)
