@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/29 11:15:45 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/06/29 11:46:31 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/07/10 15:15:24 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ void	strdup_filename_in_data(t_data *data, char *filename, int id)
 void	filename_with_spaces_in_data(t_data *data, char *line, int id)
 {
 	int		i;
-	int		len;
 
 	i = 2;
-	len = 0;
 	while (line[i] == ' ')
 		i++;
 	strdup_filename_in_data(data, line + i, id);
