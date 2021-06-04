@@ -25,3 +25,6 @@ The program will then use this file to obtain all need information and the progr
   - The `.cub` file also has a list of identifiers, which have to be included. These are:  
     Resolution, North/South/East/West Texture, Sprite Texture, Floor Color, Ceiling color
   - If any misconfiguration is encountered in the file, the program must exit properly and return an error message.
+
+### Screenshot
+https://github.com/gbouwen/cub3d/tree/master/img/cub1/png
