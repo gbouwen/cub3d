@@ -27,4 +27,4 @@ The program will then use this file to obtain all need information and the progr
   - If any misconfiguration is encountered in the file, the program must exit properly and return an error message.
 
 ### Screenshot
-https://github.com/gbouwen/cub3d/tree/master/img/cub1.png
+![Screenshot](https://github.com/gbouwen/cub3d/tree/master/img/cub1.png)
